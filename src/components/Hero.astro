@@ -1,0 +1,185 @@
+---
+import astroLogo from "../assets/astro.svg";
+import AboutMe from "./AboutMe.astro";
+---
+
+<section id="hero">
+	<div class="hero__img-container">
+		<img
+			src="https://w0.peakpx.com/wallpaper/165/445/HD-wallpaper-neon-mask-hacker-hackers-lonely-hacker-neon-mask-thumbnail.jpg"
+			alt="avatar"
+			class="hero__img"
+		/>
+	</div>
+	<div class="hero__content">
+		<h1 class="hero__title">Welcome to My Portfolio</h1>
+		<h2 class="hero__subtitle">
+			I'm a <span class="accent">Frontend Developer</span>
+		</h2>
+		<p class="hero__text">
+			Hi! I'm a web developer passionate about building modern and
+			interactive websites. Check out my projects below!
+		</p>
+		<div class="social-links">
+			<a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a
+			>
+			<a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+			<a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+			<a href="#" aria-label="Instagram"
+				><i class="fab fa-instagram"></i></a
+			>
+		</div>
+		<button class="cta-button">Hire Me</button>
+		<a href="#projects" class="cta">View Projects</a>
+	</div>
+	<img src={astroLogo.src} alt="Astro Logo" />
+</section>
+
+<style>
+	@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
+	#hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 4rem 2rem;
+		background: linear-gradient(135deg, #6366f1, #3b82f6);
+		color: white;
+		/* height: 100vh; */
+		position: relative;
+		gap: 1rem;
+	}
+
+	.hero__img-container {
+		position: relative;
+		width: 50%;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	.hero__img-container::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(
+			circle,
+			$color-primary 0%,
+			rgba($color-primary, 0.2) 100%
+		);
+		mix-blend-mode: multiply;
+	}
+
+	.hero__img {
+		position: static;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.hero__content {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.hero__title {
+		font-size: 2.5rem;
+		margin: 0;
+	}
+
+	.hero__text {
+		font-size: 1.25rem;
+		margin: 0;
+	}
+
+	.hero__subtitle {
+		font-size: 2.5rem;
+		margin: 0;
+	}
+
+	.accent {
+		color: #ff0000;
+	}
+
+	.social-links {
+		display: flex;
+		justify-content: center;
+		gap: 1.5rem;
+		margin-top: 1rem;
+	}
+
+	.social-links > a {
+		color: #ffffff;
+		font-size: 2.5rem;
+		transition: color 0.3s ease;
+	}
+
+	.cta-button {
+		width: 100%;
+		background-color: transparent;
+		color: #38bdf8;
+		border: 2px solid #38bdf8;
+		padding: 0.8rem 2rem;
+		border-radius: 50px;
+		font-size: 1.1rem;	
+		cursor: pointer;
+		transition: all 0.3s ease;
+		align-self: flex-start;
+		margin-top: 1rem;
+	}
+
+	.cta-button:hover {
+		background-color: #38bdf8;
+		color: white;
+	}
+
+	.cta {
+		background-color: #38bdf8;
+		color: white;
+		text-decoration: none;
+		padding: 0.75rem 1.5rem;
+		border-radius: 8px;
+		font-size: 1rem;
+		font-weight: bold;
+		transition: background-color 0.3s ease;
+	}
+
+	.cta:hover {
+		background-color: #2563eb;
+	}
+
+	img {
+		position: absolute;
+		bottom: 1rem;
+		right: 1rem;
+		width: 150px;
+		opacity: 0.8;
+	}
+
+	@media (min-width: 768px) {
+		#hero {
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 8rem;
+		}
+
+		.hero__content {
+			align-items: start;
+			text-align: left;
+		}
+
+		.social-links {
+			justify-content: start;
+		}
+
+		.cta-button {
+			width: auto;
+		}
+
+		img {
+			width: 200px;
+		}
+	}
+</style>

@@ -1,0 +1,71 @@
+---
+interface NavLink {
+  href: string;
+  text: string;
+}
+
+interface Props {
+  navLinks: NavLink[];
+}
+
+const { navLinks } = Astro.props;
+---
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">
+            <a href="/">MyPortfolio</a>
+        </div>
+        <ul>
+            {
+                navLinks.map((link) => (
+                    <li>
+                        <a href={link.href}>{link.text}</a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</nav>
+
+<style>
+    nav {
+        background-color: #1e293b;
+        position: sticky;
+        top: 0;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
+    
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo a {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: #f1f5f9;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+    }
+
+    li a {
+        text-decoration: none;
+        color: #f1f5f9;
+        transition: color 0.2s;
+    }
+
+    li a:hover {
+        color: #38bdf8;
+    }
+</style>
