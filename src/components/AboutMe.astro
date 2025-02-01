@@ -1,5 +1,20 @@
+---
+import '../styles/aboutme.sass';
 
+const aboutMeData = {
+  title: "About Me",
+  description: `
+    Hi, I'm a passionate frontend developer with a knack for building beautiful and functional web applications. 
+    With experience in modern web technologies like Astro, TypeScript, and React, I enjoy solving complex problems 
+    and turning ideas into reality. I'm constantly learning and staying updated with the latest industry trends.
+  `,
+};
+---
 
-<section>
-    <h1>Acerca de mí</h1>
+<section id="about" class="about">
+  <div class="about__container">
+    <h2 class="about__title">{aboutMeData.title}</h2>
+    <p class="about__description">{aboutMeData.description}</p>
+  </div>
 </section>
+

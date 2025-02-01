@@ -1,0 +1,26 @@
+---
+import '../styles/skills.sass';
+
+const skills = [
+  { name: "NextJs", icon: "https://img.icons8.com/fluency/48/nextjs.png" },
+  { name: "React", icon: "https://img.icons8.com/office/40/react.png" },
+  { name: "Astro", icon: "https://img.icons8.com/nolan/64/astro.png" },
+  { name: "JavaScript", icon: "https://img.icons8.com/color/48/javascript--v1.png" },
+  { name: "TypeScript", icon: "https://img.icons8.com/fluency/48/typescript--v1.png" },
+  { name: "Sass", icon: "https://img.icons8.com/color/48/sass.png" },
+  { name: "Figma", icon: "https://img.icons8.com/fluency/48/figma.png" },
+  { name: "Git", icon: "https://img.icons8.com/nolan/64/git.png" },
+];
+---
+
+<section id="skills" class="skills">
+  <h2 class="skills__title">Skills</h2>
+  <div class="skills__grid">
+    {skills.map(skill => (
+      <div class="skill">
+        <img src={skill.icon} alt={skill.name} class="skill__icon" />
+        <span class="skill__name">{skill.name}</span>
+      </div>
+    ))}
+  </div>
+</section>
