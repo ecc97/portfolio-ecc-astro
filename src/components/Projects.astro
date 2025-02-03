@@ -1,0 +1,123 @@
+---
+const projects = [
+    {
+        title: "SIEKGPT",
+        description: "Una aplicación web que permite a los usuarios interactuar con el modelo GPT de OpenAI, con una interfaz sencilla y funcional, experiencia de chat fluida y moderna",
+        repository: "https://github.com/sebas1913/api-openai"
+    },
+    {
+        title: "Generador de frases",
+        description: "Aplicación sencilla y funcional para generar frases consumidad por medio de api route, con una interfaz simple y agradable para el usuario",
+        repository: "https://github.com/ecc97/nextjs-api-phrasal-generator"
+    },
+    {
+        title: "Portafolio con Nextjs",
+        description: "Un portafolio con Nextjs con una vista agradable y personalizado, con tecnologías integradas como React y TailwindCSS",
+        repository: "https://github.com/ecc97/portafolio"
+    },
+    {
+        title: "Construct prop",
+        description: "Un proyecto con un mini dashboard que hace operaciones crud en un listado de productos, y un sistema de login y registro. Hecho con HTML, CSS, JavaScript.",
+        repository: "https://github.com/ecc97/construct-prop"
+    },
+    {
+        title: "Página de Transporte público",
+        description: "Una landing page con HTML y CSS básico de un producto que promociona transporte público para un centro de entrenamiento.",
+        repository: "https://github.com/ecc97/transriwi"
+    },
+    {
+        title: "Vacantes y Compañías",
+        description: "Una sencilla aplicación con una interfaz, dashboard con operaciones CRUD de vacantes y compañías en general. Hecho con NextJS, SASS",
+        repository: "https://github.com/ecc97/vacantes-top"
+    },
+    {
+        title: "Beauty SALA, con NextJS, SASS",
+        description: "Aplicación con sistema de Auth con NexthAuth, y un panel que gestiona productos y servicios de un salón de belleza.",
+        repository: "https://github.com/ecc97/beauty-salon"
+    },
+];
+
+import "../styles/projects.sass";
+---
+
+<section id="projects" class="projects">
+    <h2 class="projects__title">Proyectos</h2>
+
+    <div class="carousel">
+        <button class="carousel__button carousel__button--prev" id="prev">
+            &#10094;
+        </button>
+
+        <div class="carousel__container" id="carousel">
+            {
+                projects.map((project, index) => (
+                    <div class="carousel__item" id={"slide-" + index}>
+                        <div class="project-card">
+                            <img
+                                src="https://raw.githubusercontent.com/ecc97/portafolio/refs/heads/main/public/assets/img/projects-web.png"
+                                alt={project.title}
+                                class="project-card__image"
+                            />
+                            <h3 class="project-card__title">{project.title}</h3>
+                            <p class="project-card__description">
+                                {project.description}
+                            </p>
+                            <a href={project.repository} target="_blank" class="project-card__link">Repositorio</a>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <button class="carousel__button carousel__button--next" id="next">
+            &#10095;
+        </button>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const prevButton = document.querySelector("#prev");
+        const nextButton = document.querySelector("#next");
+        const carousel = document.getElementById("carousel");
+        let interval: number | undefined;
+
+        if (!carousel) return;
+
+        function scrollRight() {
+            if (!carousel) return;
+            if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+                carousel.scrollTo({ left: 0, behavior: "instant" });
+            } else {
+                carousel.scrollBy({ left: 300, behavior: "smooth" });
+            }
+        }
+
+        function scrollLeft() {
+            if (!carousel) return;
+            if (carousel.scrollLeft === 0) {
+                carousel.scrollTo({ left: carousel.scrollWidth, behavior: "instant" });
+            } else {
+                carousel.scrollBy({ left: -300, behavior: "smooth" });
+            }
+        }
+
+        prevButton?.addEventListener("click", () => {
+            clearInterval(interval);
+            scrollLeft();
+            startAutoScroll();
+        });
+
+        nextButton?.addEventListener("click", () => {
+            clearInterval(interval);
+            scrollRight();
+            startAutoScroll();
+        });
+
+        function startAutoScroll() {
+            interval = setInterval(scrollRight, 3000);
+        }
+
+        startAutoScroll();
+    });
+</script>
