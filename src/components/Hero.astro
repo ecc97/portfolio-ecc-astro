@@ -1,185 +1,279 @@
 ---
-import astroLogo from "../assets/astro.svg";
-import AboutMe from "./AboutMe.astro";
+
 ---
 
-<section id="hero">
-	<div class="hero__img-container">
-		<img
-			src="https://w0.peakpx.com/wallpaper/165/445/HD-wallpaper-neon-mask-hacker-hackers-lonely-hacker-neon-mask-thumbnail.jpg"
-			alt="avatar"
-			class="hero__img"
-		/>
-	</div>
+<section id="hero" class="hero">
 	<div class="hero__content">
-		<h1 class="hero__title">Welcome to My Portfolio</h1>
-		<h2 class="hero__subtitle">
-			I'm a <span class="accent">Frontend Developer</span>
-		</h2>
-		<p class="hero__text">
-			Hi! I'm a web developer passionate about building modern and
-			interactive websites. Check out my projects below!
-		</p>
-		<div class="social-links">
-			<a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a
-			>
-			<a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-			<a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-			<a href="#" aria-label="Instagram"
-				><i class="fab fa-instagram"></i></a
-			>
+		<div class="text__content">
+			<h1 class="hero__title">Edwin Carmona</h1>
+			<h2 class="hero__glitch-subtitle">Frontend Developer</h2>
+			<p class="hero__text">
+				Soy un desarrollador web apasionado por la construcción de
+				landing pages y sitios web modernos e interactivos. Me
+				especializo en la creación de interfaces de usuario atractivas
+				utilizando tecnologías modernas.
+			</p>
+			<div class="social-links">
+				<a href="https://www.linkedin.com/in/edwin-carmona-c" aria-label="LinkedIn"
+					target="_blank"><i class="fab fa-linkedin"></i></a
+				>
+				<a href="https://github.com/ecc97" aria-label="GitHub"><i class="fab fa-github"></i></a
+				>
+				<a href="https://x.com/ecckyo97" aria-label="Twitter"
+					><i class="fab fa-x-twitter"></i></a
+				>
+			</div>
+			<div class="cta-buttons">
+				<a href="#projects" class="primary-btn">Ver Proyectos</a>
+				<a href="#about" class="secondary-btn">Sobre mí</a>
+			</div>
 		</div>
-		<button class="cta-button">Hire Me</button>
-		<a href="#projects" class="cta">View Projects</a>
+		<div class="hero__img-container">
+			<div class="avatar-container">
+				<img
+					src="https://w0.peakpx.com/wallpaper/165/445/HD-wallpaper-neon-mask-hacker-hackers-lonely-hacker-neon-mask-thumbnail.jpg"
+					alt="Avatar Developer"
+					class="avatar"
+				/>
+			</div>
+		</div>
 	</div>
-	<img src={astroLogo.src} alt="Astro Logo" />
-</section>
 
-<style>
-	@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
-	#hero {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		padding: 4rem 2rem;
-		background: linear-gradient(135deg, #6366f1, #3b82f6);
-		color: white;
-		/* height: 100vh; */
-		position: relative;
-		gap: 1rem;
-	}
-
-	.hero__img-container {
-		position: relative;
-		width: 50%;
-		aspect-ratio: 1;
-		border-radius: 50%;
-		overflow: hidden;
-	}
-
-	.hero__img-container::after {
-		content: "";
-		position: absolute;
-		inset: 0;
-		background: radial-gradient(
-			circle,
-			$color-primary 0%,
-			rgba($color-primary, 0.2) 100%
-		);
-		mix-blend-mode: multiply;
-	}
-
-	.hero__img {
-		position: static;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.hero__content {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-	}
-
-	.hero__title {
-		font-size: 2.5rem;
-		margin: 0;
-	}
-
-	.hero__text {
-		font-size: 1.25rem;
-		margin: 0;
-	}
-
-	.hero__subtitle {
-		font-size: 2.5rem;
-		margin: 0;
-	}
-
-	.accent {
-		color: #ff0000;
-	}
-
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1.5rem;
-		margin-top: 1rem;
-	}
-
-	.social-links > a {
-		color: #ffffff;
-		font-size: 2.5rem;
-		transition: color 0.3s ease;
-	}
-
-	.cta-button {
-		width: 100%;
-		background-color: transparent;
-		color: #38bdf8;
-		border: 2px solid #38bdf8;
-		padding: 0.8rem 2rem;
-		border-radius: 50px;
-		font-size: 1.1rem;	
-		cursor: pointer;
-		transition: all 0.3s ease;
-		align-self: flex-start;
-		margin-top: 1rem;
-	}
-
-	.cta-button:hover {
-		background-color: #38bdf8;
-		color: white;
-	}
-
-	.cta {
-		background-color: #38bdf8;
-		color: white;
-		text-decoration: none;
-		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
-		font-size: 1rem;
-		font-weight: bold;
-		transition: background-color 0.3s ease;
-	}
-
-	.cta:hover {
-		background-color: #2563eb;
-	}
-
-	img {
-		position: absolute;
-		bottom: 1rem;
-		right: 1rem;
-		width: 150px;
-		opacity: 0.8;
-	}
-
-	@media (min-width: 768px) {
-		#hero {
-			flex-direction: row;
-			justify-content: space-between;
-			padding: 8rem;
+	<style lang="scss" scoped>
+		@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
+		
+		.hero {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 1rem;
+			min-height: 100vh;
 		}
 
 		.hero__content {
-			align-items: start;
-			text-align: left;
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 2rem;
+
+			@media (min-width: 768px) {
+				grid-template-columns: 1.2fr 0.8fr;
+			}
+			// display: flex;
+			// flex-direction: row;
+			// justify-content: space-between;
+			// align-items: center;
+			// gap: 2rem;
+			// width: 100%;
+			// max-width: 1200px;
+			// padding: 0 1rem;
+		}
+
+		.text__content {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			padding: 0 2rem;
+			animation: fadeIn 1s ease-out;
+		}
+
+		.hero__title {
+			font-size: 5rem;
+			margin: 0;
+		}
+		.hero__glitch-subtitle {
+			font-size: 3rem;
+			font-weight: 700;
+			margin: 0;
+			position: relative;
+			color: #2563eb;
+
+			&::before,
+			&::after {
+				content: "Frontend Developer";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			&::before {
+				left: 2px;
+				text-shadow: -2px 0 #f472b6;
+				animation: glitch-1 2s infinite linear alternate-reverse;
+			}
+
+			&::after {
+				left: -2px;
+				text-shadow: 2px 0 #4f46e5;
+				animation: glitch-2 2s infinite linear alternate-reverse;
+			}
+		}
+		.hero__text {
+			font-size: 1.25rem;
+			line-height: 1.6;
+			margin: 1.5rem 0;
+			opacity: 0.9;
+			text-align: start;
+		}
+
+		.cta-buttons {
+			display: flex;
+			gap: 1rem;
+			margin-top: 2rem;
+		}
+
+		.primary-btn,
+		.secondary-btn {
+			padding: 0.8rem 1.5rem;
+			border-radius: 8px;
+			text-decoration: none;
+			font-weight: 500;
+			transition:
+				transform 0.3s ease,
+				box-shadow 0.3s ease;
+
+			&:hover {
+				transform: translateY(-2px);
+			}
+		}
+
+		.primary-btn {
+			background: linear-gradient(135deg, #2563eb, #2563eb);
+			color: white;
+			box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+
+			&:hover {
+				box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+			}
+		}
+
+		.secondary-btn {
+			border: 2px solid #2563eb;
+			color: #2563eb;
+
+			&:hover {
+				background: rgba(37, 99, 235, 0.1);
+				box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+			}
+		}
+
+		.hero__img-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.avatar-container {
+			width: 300px;
+			height: 300px;
+			perspective: 1000px;
+			.avatar {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+				transform: rotateY(-10deg);
+				transition: all 0.3s ease;
+
+				&:hover {
+					transform: rotateY(0deg);
+					box-shadow: 0 16px 40px rgba(255, 255, 255, 0.2);;
+				}
+			}
 		}
 
 		.social-links {
-			justify-content: start;
+			display: flex;
+			justify-content: center;
+			gap: 1.5rem;
+			margin-top: 1rem;
 		}
 
-		.cta-button {
-			width: auto;
+		.social-links > a {
+			color: #ffffff;
+			font-size: 2.5rem;
+			transition: all 0.5s ease;
+
+			&:hover {
+				color: #2563eb;
+				transform: rotate(360deg);
+			}
 		}
 
-		img {
-			width: 200px;
+		@media (max-width: 768px) {
+			.hero__content {
+				display: flex;
+				flex-direction: column-reverse;
+				text-align: center;
+			}
+
+			.text__content {
+				align-items: center;
+				text-align: center;
+				padding: 0 1rem;
+			}
+			.cta-buttons {
+				justify-content: center;
+			}
+
+			.hero__title {
+				font-size: 3rem;
+			}
+
+			.hero__text {
+				font-size: 1rem;
+				text-align: center;
+			}
+
+			.hero__glitch-subtitle {
+				font-size: 2.5rem;
+			}
+			.social-links {
+				justify-content: start;
+			}
+
+			.avatar-container {
+				width: 200px;
+				height: 200px;
+				margin: 2rem auto 0;
+
+				.avatar {
+					transform: none;
+				}
+			}
 		}
-	}
-</style>
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes glitch-1 {
+			0% {
+				clip-path: inset(80% 0 0 0);
+			}
+			100% {
+				clip-path: inset(0 0 80% 0);
+			}
+		}
+
+		@keyframes glitch-2 {
+			0% {
+				clip-path: inset(0 80% 0 0);
+			}
+			100% {
+				clip-path: inset(0 0 0 80%);
+			}
+		}
+	</style>
+</section>
