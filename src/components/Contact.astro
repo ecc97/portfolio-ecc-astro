@@ -3,9 +3,25 @@ import "../styles/contact.sass";
 ---  
 
 <section id="contact" class="contact">
+    <h2 class="contact__title">Contacto</h2>
     <div class="contact__container">
-        <h2 class="contact__title">Contacto</h2>
-        <form class="contact__form">
+        <div class="contact__info">
+            <h3>Let's work together!</h3>
+            <p>Actualmente estoy buscando oportunidades para trabajar en un equipo de desarrollo, si tienes alguna oferta que te interese, por favor, no dudes en contactarme.</p>
+            <p>Si tienes un proyecto que necesita un toque creativo, hablemos de ello.</p>
+            <div class="social-links">
+                <a href="https://github.com/ecc97" target="_blank" rel="noopener noreferrer" class="social-link">
+                  GitHub
+                </a>
+                <a href="https://linkedin.com/in/edwin-carmona-c" target="_blank" rel="noopener noreferrer" class="social-link">
+                  LinkedIn
+                </a>
+                <a href="mailto:ecc97@gmail.com" class="social-link">
+                  Email
+                </a>
+            </div>
+        </div>
+        <form class="contact__form" id="contact-form">
             <div class="contact__field">
                 <label for="name">Nombre</label>
                 <input type="text" id="name" name="name" required />

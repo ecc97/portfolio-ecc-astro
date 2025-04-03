@@ -1,0 +1,95 @@
+---
+
+---
+
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__content">
+            <p class="footer__text">Desarrollado por ecc97 &copy; {new Date().getFullYear()}. Todos los derechos reservados.</p>
+        </div>
+        <div class="footer__social-media">
+            <a href="https://github.com/ecc97" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/edwin-carmona-c" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/ecckyo97" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<style lang="scss" scoped>
+    .footer {
+        background-color: rgba(15, 23, 42, 0.9);
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .footer__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (width <= 768px) {
+            flex-direction: column-reverse;
+            gap: 1rem;
+        }
+    }
+
+    .footer__text {
+        color: #fff;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .footer__text a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer__text a:hover {
+        color: #ff0000;
+    }
+
+    .footer__content {
+        flex: 1;
+    }
+
+    .footer__social-media {
+        display: flex;
+        gap: 10px;
+    }
+
+    .social-link {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .social-link:hover {
+        color: #ff0000;
+    }
+</style>
+
+<script>
+    // Crear script para dar año actual
+    // const currentYear = new Date().getFullYear();
+    // document.querySelector('.footer__content')!.innerHTML += `© ${currentYear} ecc97. Todos los derechos reservados.`;
+
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     const socialLinks = document.querySelectorAll('.social-link');
+    //     socialLinks.forEach(link => {
+    //         link.addEventListener('click', (event) => {
+    //             event.preventDefault();
+    //             const target = event.target.getAttribute('href');
+    //             window.open(target, '_blank');
+    //         });
+    //     });
+    // });
+</script>
