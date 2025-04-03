@@ -1,25 +1,60 @@
 ---
 import '../styles/skills.sass';
 
-const skills = [
+const tecnologies = [
   { name: "NextJs", icon: "https://img.icons8.com/fluency/48/nextjs.png" },
   { name: "React", icon: "https://img.icons8.com/office/40/react.png" },
   { name: "Astro", icon: "https://img.icons8.com/nolan/64/astro.png" },
   { name: "JavaScript", icon: "https://img.icons8.com/color/48/javascript--v1.png" },
   { name: "TypeScript", icon: "https://img.icons8.com/fluency/48/typescript--v1.png" },
   { name: "Sass", icon: "https://img.icons8.com/color/48/sass.png" },
-  { name: "Figma", icon: "https://img.icons8.com/fluency/48/figma.png" },
-  { name: "Git", icon: "https://img.icons8.com/nolan/64/git.png" },
+  { name: "Prisma", icon: "https://img.icons8.com/?size=100&id=aqb9SdV9P8oC&format=png&color=000000" }
 ];
+
+const tools = [
+  {name: "VS Code", icon: "https://img.icons8.com/color/48/visual-studio-code-2019.png"},
+  {name: "Figma", icon: "https://img.icons8.com/fluency/48/figma.png"},
+  {name: "Git", icon: "https://img.icons8.com/nolan/64/git.png"},
+  {name: "Docker", icon: "https://img.icons8.com/fluency/48/docker.png"},
+]
+
+const softSkills = [
+  {name: "Trabajo en equipo", icon: ""},
+  {name: "Comunicación", icon: ""},
+  {name: "Resolución de problemas", icon: ""},
+  {name: "Puntualidad", icon: ""},
+  {name: "Adaptabilidad", icon: ""},
+  {name: "Flexibilidad", icon: ""},
+  {name: "Autonomía", icon: ""},
+]
 ---
 
 <section id="skills" class="skills">
-  <h2 class="skills__title">Skills</h2>
+  <h2 class="skills__title">💻 Tecnologías</h2>
   <div class="skills__grid">
-    {skills.map(skill => (
+    {tecnologies.map(skill => (
       <div class="skill">
         <img src={skill.icon} alt={skill.name} class="skill__icon" />
         <span class="skill__name">{skill.name}</span>
+      </div>
+    ))}
+  </div>
+
+  <h2 class="skills__title">🛠️ Herramientas</h2>
+  <div class="skills__grid">
+    {tools.map(tool => (
+      <div class="skill">
+        <img src={tool.icon} alt={tool.name} class="skill__icon" />
+        <span class="skill__name">{tool.name}</span>
+      </div>
+    ))}
+  </div>
+
+  <h2 class="skills__title">🤝 Soft Skills</h2>
+  <div class="skills__soft-skills">
+    {softSkills.map(softSkill => (
+      <div class="soft-skill-item">
+        <span class="soft-skill-name">{softSkill.name}</span>
       </div>
     ))}
   </div>

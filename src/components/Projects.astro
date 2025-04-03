@@ -1,39 +1,93 @@
 ---
-const projects = [
+interface Project {
+    title: string;
+    description: string;
+    linkRepo: string;
+    linkDemo?: string;
+    image: string;
+    tech: string[];
+}
+
+const projects: Project[] = [
     {
-        title: "SIEKGPT",
-        description: "Una aplicación web que permite a los usuarios interactuar con el modelo GPT de OpenAI, con una interfaz sencilla y funcional, experiencia de chat fluida y moderna",
-        repository: "https://github.com/sebas1913/api-openai"
+        title: "Portafolio con React y Next.js",
+        description: "Creación de portafolio con Next.js con SSR. Una versión de portafolio hecha con next.js y navegación entre páginas dinámicas de portafolio",
+        linkRepo: "https://github.com/ecc97/portafolio",
+        linkDemo: "https://ecc97.vercel.app",
+        image: "/assets/img/projects-web.png",
+        tech: ["Next.js", "TypeScript", "Tailwind", "Css modules"],
     },
     {
-        title: "Generador de frases",
-        description: "Aplicación sencilla y funcional para generar frases consumidad por medio de api route, con una interfaz simple y agradable para el usuario",
-        repository: "https://github.com/ecc97/nextjs-api-phrasal-generator"
+        title: "Galería de imagenes",
+        description:
+            "Creación de una galería de imagenes usando Next.js y consumiendo la API de Pexels para mostrar una galería de imágenes dinámicas y filtrables",
+        linkRepo: "https://github.com/ecc97/visionPx",
+        linkDemo: "https://vision-px.vercel.app",
+        image: "/assets/img/projects-web.png",
+        tech: ["Next.js", "TypeScript", "Tailwind", "Sass"],
     },
     {
-        title: "Portafolio con Nextjs",
-        description: "Un portafolio con Nextjs con una vista agradable y personalizado, con tecnologías integradas como React y TailwindCSS",
-        repository: "https://github.com/ecc97/portafolio"
+        title: "Login/Register Auth",
+        description:
+            "Creación de un sistema de autenticación con nextauth y firebase, que permite a los usuarios registrarse, iniciar sesión y acceder a una página de perfil protegida",
+        linkRepo: "https://github.com/ecc97/auth-basic-next-firebase",
+        linkDemo: "https://auth-basic-next-firebase.vercel.app",
+        image: "/assets/img/projects-web.png",
+        tech: ["Next.js", "React", "Sass", "Firebase", "NextAuth"],
     },
     {
-        title: "Construct prop",
-        description: "Un proyecto con un mini dashboard que hace operaciones crud en un listado de productos, y un sistema de login y registro. Hecho con HTML, CSS, JavaScript.",
-        repository: "https://github.com/ecc97/construct-prop"
+        title: "Next.js Prisma CRUD de Notas",
+        description:
+            "Creación de un CRUD de notas usando Next.js, Prisma y TypeScript",
+        linkRepo: "https://github.com/ecc97/nextjs-prisma-crud",
+        linkDemo: "https://nextjs-prisma-crud-tan.vercel.app",
+        image: "/assets/img/projects-web.png",
+        tech: ["Next.js", "React", "Tailwind", "Prisma", "Supabase"],
     },
     {
-        title: "Página de Transporte público",
-        description: "Una landing page con HTML y CSS básico de un producto que promociona transporte público para un centro de entrenamiento.",
-        repository: "https://github.com/ecc97/transriwi"
+        title: "Api de DB",
+        description:
+            "Integración de una API, que obtiene una lista de personajes, usando TypeScript y permite navegación por paginación",
+        linkRepo: "https://github.com/ecc97/api-db",
+        linkDemo: "https://api-db-a324.netlify.app",
+        image: "/assets/img/projects-web.png",
+        tech: ["TypeScript", "CSS", "JavaScript", "Api Fetch"],
     },
     {
-        title: "Vacantes y Compañías",
-        description: "Una sencilla aplicación con una interfaz, dashboard con operaciones CRUD de vacantes y compañías en general. Hecho con NextJS, SASS",
-        repository: "https://github.com/ecc97/vacantes-top"
+        title: "Tienda de carrito de productos",
+        description:
+            "Este es un proyecto de un store de productos con carrito de compras usando NextJs y TypeScript, adicionando NextAuth y Redux",
+        linkRepo: "https://github.com/ecc97/ecommerce-shop-cart",
+        linkDemo: "https://ecommerce-shop-cart.vercel.app",
+        image: "/assets/img/projects-web.png",
+        tech: ["Next.js", "React", "TypeScript", "NextAuth", "Redux"],
     },
     {
-        title: "Beauty SALA, con NextJS, SASS",
-        description: "Aplicación con sistema de Auth con NexthAuth, y un panel que gestiona productos y servicios de un salón de belleza.",
-        repository: "https://github.com/ecc97/beauty-salon"
+        title: "Lista de tareas",
+        description:
+            "Un proyecto práctico con Next.js y Typescript, que permite crear y leer tareas, con opción de completado y pendiente",
+        linkRepo: "https://github.com/ecc97/to-do-nextjs-pra",
+        linkDemo: "",
+        image: "/assets/img/projects-web.png",
+        tech: ["Next.js", "React", "TypeScript", "Tailwind", "Sass"],
+    },
+    {
+        title: "siekGPT",
+        description:
+            "Proyecto en conjunto de una aplicación web permite a los usuarios interactuar con el modelo GPT de OpenAI",
+        linkRepo: "https://github.com/sebas1913/api-openai",
+        linkDemo: "https://api-openai.vercel.app/",
+        image: "/assets/img/projects-web.png",
+        tech: ["Next.js", "TypeScript", "Prisma", "OpenAI API"],
+    },
+    {
+        title: "System Invoicing",
+        description:
+            "Aplicación web para la gestión de facturas que integra autenticación, creación, listado, actualización y eliminación de facturas, junto con el registro de pagos",
+        linkRepo: "https://github.com/ecc97/system-invoicing",
+        linkDemo: "https://system-invoicing.vercel.app/",
+        image: "/assets/img/projects-web.png",
+        tech: ["Next.js", "TypeScript", "Prisma", "Tailwind"],
     },
 ];
 
@@ -41,83 +95,95 @@ import "../styles/projects.sass";
 ---
 
 <section id="projects" class="projects">
-    <h2 class="projects__title">Proyectos</h2>
-
-    <div class="carousel">
-        <button class="carousel__button carousel__button--prev" id="prev">
-            &#10094;
-        </button>
-
-        <div class="carousel__container" id="carousel">
-            {
-                projects.map((project, index) => (
-                    <div class="carousel__item" id={"slide-" + index}>
-                        <div class="project-card">
-                            <img
-                                src="https://raw.githubusercontent.com/ecc97/portafolio/refs/heads/main/public/assets/img/projects-web.png"
-                                alt={project.title}
-                                class="project-card__image"
-                            />
-                            <h3 class="project-card__title">{project.title}</h3>
-                            <p class="project-card__description">
-                                {project.description}
-                            </p>
-                            <a href={project.repository} target="_blank" class="project-card__link">Repositorio</a>
-                        </div>
+    <article class="projects__container">
+        <h2 class="projects__title">Proyectos</h2>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                {projects.map((project) => (
+                    <div class="swiper-slide">
+                        <article class="project-card">
+                            <div class="project-card__image">
+                                <img
+                                    src="https://raw.githubusercontent.com/ecc97/portafolio/refs/heads/main/public/assets/img/projects-web.png"
+                                    alt={project.title}
+                                    loading="lazy"
+                                    class="project-card__image--img"
+                                />
+                            </div>
+                            <div class="project-container">
+                                <h3 class="project-card__title">{project.title}</h3>
+                                <p class="project-card__description">{project.description}</p>
+                                <div class="tech-stack">
+                                    {project.tech.map((tech) => (
+                                        <span class="tech-tag">{tech}</span>
+                                    ))}
+                                </div>
+                                <div class="project-card__links">
+                                    <a
+                                        href={project.linkRepo}
+                                        target="_blank"
+                                        class="project-card__link"
+                                    >
+                                        Repositorio
+                                    </a>
+                                    {project.linkDemo && (
+                                        <a
+                                            href={project.linkDemo}
+                                            target="_blank"
+                                            class="project-card__link"
+                                        >
+                                            Demo
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
+                        </article>
                     </div>
-                ))
-            }
+                ))}
+            </div>
+            
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+    
         </div>
-
-        <button class="carousel__button carousel__button--next" id="next">
-            &#10095;
-        </button>
-    </div>
+    </article>
 </section>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const prevButton = document.querySelector("#prev");
-        const nextButton = document.querySelector("#next");
-        const carousel = document.getElementById("carousel");
-        let interval: number | undefined;
+    import Swiper from "swiper";
+    import { Navigation, Pagination, Autoplay } from "swiper/modules";
+    import "swiper/css";
+    import "swiper/css/navigation";
+    import "swiper/css/pagination";
 
-        if (!carousel) return;
-
-        function scrollRight() {
-            if (!carousel) return;
-            if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-                carousel.scrollTo({ left: 0, behavior: "instant" });
-            } else {
-                carousel.scrollBy({ left: 300, behavior: "smooth" });
-            }
-        }
-
-        function scrollLeft() {
-            if (!carousel) return;
-            if (carousel.scrollLeft === 0) {
-                carousel.scrollTo({ left: carousel.scrollWidth, behavior: "instant" });
-            } else {
-                carousel.scrollBy({ left: -300, behavior: "smooth" });
-            }
-        }
-
-        prevButton?.addEventListener("click", () => {
-            clearInterval(interval);
-            scrollLeft();
-            startAutoScroll();
-        });
-
-        nextButton?.addEventListener("click", () => {
-            clearInterval(interval);
-            scrollRight();
-            startAutoScroll();
-        });
-
-        function startAutoScroll() {
-            interval = setInterval(scrollRight, 3000);
-        }
-
-        startAutoScroll();
+    new Swiper(".swiper", {
+        modules: [Navigation, Pagination, Autoplay],
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+           delay: 5000,
+           disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
     });
 </script>
