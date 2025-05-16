@@ -1,27 +1,37 @@
----  
-import "../styles/contact.sass";  
----  
+---
+import "../styles/contact.sass";
+---
 
 <section id="contact" class="contact">
     <h2 class="contact__title">Contacto</h2>
     <div class="contact__container">
         <div class="contact__info">
             <h3>Let's work together!</h3>
-            <p>Actualmente estoy buscando oportunidades para trabajar en un equipo de desarrollo, si tienes alguna oferta que te interese, por favor, no dudes en contactarme.</p>
-            <p>Si tienes un proyecto que necesita un toque creativo, hablemos de ello.</p>
+            <p>
+                Actualmente estoy buscando oportunidades para trabajar en un
+                equipo de desarrollo, si tienes alguna oferta que te interese,
+                por favor, no dudes en contactarme.
+            </p>
+            <p>
+                Si tienes un proyecto que necesita un toque creativo, hablemos
+                de ello.
+            </p>
             <div class="social-links">
-                <a href="https://github.com/ecc97" target="_blank" rel="noopener noreferrer" class="social-link">
-                  GitHub
+                <a href="https://github.com/ecc97" target="_blank" rel="noopener noreferrer" class="social-link" >
+                    GitHub
                 </a>
-                <a href="https://linkedin.com/in/edwin-carmona-c" target="_blank" rel="noopener noreferrer" class="social-link">
-                  LinkedIn
+                <a href="https://linkedin.com/in/edwin-carmona-c" target="_blank" rel="noopener noreferrer" class="social-link" >
+                    LinkedIn
                 </a>
-                <a href="mailto:ecc97@gmail.com" class="social-link">
-                  Email
-                </a>
+                <a href="mailto:ecc97@gmail.com" class="social-link"> Email </a>
             </div>
         </div>
-        <form class="contact__form" id="contact-form">
+
+        <form action="https://formsubmit.co/400e6dfab1b3a450b4253b127fff5519" method="POST" class="contact__form" id="contact-form" >
+            <div id="success-message" class="contact__success">
+                ¡Tu mensaje ha sido enviado correctamente!
+            </div>
+
             <div class="contact__field">
                 <label for="name">Nombre</label>
                 <input type="text" id="name" name="name" required />
@@ -37,7 +47,45 @@ import "../styles/contact.sass";
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
 
+            <input type="hidden" name="_next" value="https://edwcc.netlify.app/" />
+            <input type="hidden" name="_captcha" value="false" />
+
             <button type="submit" class="contact__button">Enviar</button>
         </form>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("contact-form") as HTMLFormElement | null;
+            const successMsg = document.getElementById("success-message") as HTMLDivElement | null;
+
+            if (form) {
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+
+                    fetch(form.action, {
+                        method: form.method,
+                        body: new FormData(form),
+                    }).then((response) => {
+                        if (response.ok) {
+                            if (successMsg) {
+                                successMsg.style.display = "block";
+                            }
+
+                            setTimeout(() => {
+                                if (successMsg) {
+                                    successMsg.style.display = "none";
+                                }
+                            }, 2000);
+
+                            form.reset();
+                        } else {
+                            alert("⚠️ Hubo un error al enviar tu mensaje. Inténtalo de nuevo.");
+                            }
+                        }).catch((error) => {
+                            console.error("Error:", error);
+                        });
+                });
+            }
+        });
+    </script>
 </section>
