@@ -1,4 +1,4 @@
-interface Project {
+export interface Project {
     title: string;
     description: string;
     linkRepo: string;
@@ -6,5 +6,3 @@ interface Project {
     image: string;
     techBadges: string[];
 }
-
-export const projects: Project[] = [];

@@ -1,6 +1,9 @@
 ---
-import { projects } from "../utils/ProjectsList";
+import { getProjects } from "../services/projectService";
 import "../styles/projects.sass";
+
+const projects = await getProjects();
+
 ---
 
 <section id="projects" class="projects">
@@ -23,8 +26,8 @@ import "../styles/projects.sass";
                                 <h3 class="project-card__title">{project.title}</h3>
                                 <p class="project-card__description">{project.description}</p>
                                 <div class="tech-stack">
-                                    {project.tech.map((tech) => (
-                                        <span class="tech-tag">{tech}</span>
+                                    {project.techBadges.map((techBadge) => (
+                                        <span class="tech-tag">{techBadge}</span>
                                     ))}
                                 </div>
                                 <div class="project-card__links">
